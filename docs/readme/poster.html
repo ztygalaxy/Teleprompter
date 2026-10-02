@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1600" />
+    <title>台词流 README 海报</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { width: 1391px; height: 900px; margin: 0; overflow: hidden; }
+      body { font-family: "PingFang SC", "Hiragino Sans GB", sans-serif; background: #e8e1d3; }
+      .poster {
+        position: relative;
+        width: 1600px;
+        height: 900px;
+        transform: translateY(59px) scale(.869375);
+        transform-origin: top left;
+        overflow: hidden;
+        color: #17201d;
+        background:
+          radial-gradient(circle at 8% 0%, #fffdfa 0, transparent 37%),
+          radial-gradient(circle at 95% 90%, #d3ddd4 0, transparent 34%),
+          repeating-linear-gradient(120deg, rgba(23, 32, 29, .022) 0 1px, transparent 1px 11px),
+          #e8e1d3;
+      }
+      .masthead { position: absolute; top: 53px; left: 70px; display: flex; align-items: center; gap: 19px; }
+      .masthead img { width: 68px; height: 68px; filter: drop-shadow(0 8px 12px rgba(23, 32, 29, .16)); }
+      .masthead strong { display: block; font-size: 45px; line-height: 1.05; letter-spacing: .08em; }
+      .masthead span { display: block; margin-top: 6px; font-size: 20px; letter-spacing: .23em; color: #66706a; }
+      .slogan {
+        position: absolute; top: 79px; right: 82px;
+        display: flex; align-items: center; gap: 12px;
+        font-size: 22px; font-weight: 600; letter-spacing: .1em;
+      }
+      .slogan::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: #639577; box-shadow: 0 0 0 8px rgba(99, 149, 119, .12); }
+      .rule { position: absolute; top: 160px; left: 70px; width: 1065px; height: 2px; background: linear-gradient(90deg, #df573c, rgba(223, 87, 60, 0)); }
+      .desktop {
+        position: absolute; top: 217px; left: 67px; width: 1114px;
+        padding: 9px; border-radius: 22px; background: #fbf9f3;
+        box-shadow: 0 38px 62px rgba(23, 32, 29, .2), 0 0 0 1px rgba(23, 32, 29, .12);
+      }
+      .desktop img { display: block; width: 100%; border-radius: 15px; }
+      .desktop::before { content: ""; position: absolute; top: -15px; left: 38px; right: 38px; height: 12px; border-radius: 12px 12px 0 0; background: rgba(46, 71, 62, .15); }
+      .player {
+        position: absolute; top: 445px; left: 585px; width: 560px;
+        padding: 7px; border-radius: 17px; background: #17201d;
+        box-shadow: 0 23px 44px rgba(23, 32, 29, .31), 0 0 0 2px rgba(255, 255, 255, .85);
+      }
+      .player img { display: block; width: 100%; border-radius: 11px; }
+      .player::before {
+        content: "全屏提词"; position: absolute; top: -23px; left: 23px;
+        padding: 6px 15px; border-radius: 8px 8px 0 0;
+        color: #f8f4ea; background: #17201d; font-size: 18px; font-weight: 600; letter-spacing: .08em;
+      }
+      .phone {
+        position: absolute; top: 165px; left: 1119px; width: 343px;
+        padding: 11px; border-radius: 45px; background: #17201d;
+        box-shadow: 0 35px 60px rgba(23, 32, 29, .28), 0 0 0 2px rgba(255, 255, 255, .6);
+        transform: rotate(2deg);
+      }
+      .phone img { display: block; width: 100%; border-radius: 35px; }
+      .phone::after { content: ""; position: absolute; right: -4px; top: 145px; width: 4px; height: 75px; border-radius: 0 4px 4px 0; background: #59675e; }
+      .labels { position: absolute; bottom: 31px; left: 70px; right: 80px; display: flex; justify-content: space-between; align-items: center; }
+      .labels span { display: block; font-size: 21px; font-weight: 600; letter-spacing: .12em; }
+      .labels span:last-child { color: #df573c; }
+    </style>
+  </head>
+  <body>
+    <main class="poster">
+      <div class="masthead"><img src="../../icons/icon.svg" alt="" /><div><strong>台词流</strong><span>简约免费提词器</span></div></div>
+      <div class="slogan">简约 / 方便 / 免费</div>
+      <div class="rule"></div>
+      <div class="desktop"><img src="desktop-editor.jpg" alt="电脑端编辑与实时预览" /></div>
+      <div class="player"><img src="desktop-player.jpg" alt="全屏提词效果" /></div>
+      <div class="phone"><img src="mobile-editor.jpg" alt="手机端编辑" /></div>
+      <div class="labels"><span>桌面端 · 编辑与实时预览</span><span>手机端 · 随时开讲</span></div>
+    </main>
+  </body>
+</html>
