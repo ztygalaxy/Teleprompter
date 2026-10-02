@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#17201d" />
+    <meta name="description" content="一款简约、免费并支持横竖屏使用的离线提词器。" />
+    <meta name="apple-mobile-web-app-title" content="台词流" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="台词流" />
+    <meta property="og:title" content="台词流 · 简约免费提词器" />
+    <meta property="og:description" content="简约、方便、免费的在线提词器，支持自动滚动和横竖屏使用。" />
+    <meta property="og:url" content="https://teleprompter.tyzhang.top/" />
+    <meta property="og:image" content="https://teleprompter.tyzhang.top/icons/share-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="台词流 Logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="台词流 · 简约免费提词器" />
+    <meta name="twitter:description" content="简约、方便、免费的在线提词器。" />
+    <meta name="twitter:image" content="https://teleprompter.tyzhang.top/icons/share-card.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="css/style.css?v=34" />
+    <title>台词流 · 简约免费提词器</title>
+  </head>
+  <body>
+    <div class="app-shell" id="editorView">
+      <header class="app-header">
+        <a class="brand" href="#" aria-label="台词流首页">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>
+            <strong>台词流</strong>
+            <small>提词器</small>
+          </span>
+        </a>
+        <div class="local-badge">
+          <i aria-hidden="true"></i>
+          <span class="local-copy">
+            <strong>简约 / 方便 / 免费</strong>
+          </span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="script-card reveal reveal-one" aria-labelledby="scriptTitle">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">01 / 台词</span>
+              <h1 id="scriptTitle">把要说的话放进来</h1>
+            </div>
+            <button class="text-button" id="clearButton" type="button">清空</button>
+          </div>
+
+          <label class="sr-only" for="scriptInput">提词内容</label>
+          <textarea
+            id="scriptInput"
+            spellcheck="false"
+            placeholder="粘贴或输入台词…&#10;&#10;建议按说话节奏分段，提词时会更容易找到位置。"
+          ></textarea>
+          <div class="script-meta">
+            <span id="saveStatus">已自动保存</span>
+            <span><strong id="charCount">0</strong> 字</span>
+          </div>
+        </section>
+
+        <aside class="control-column">
+          <section class="settings-card reveal reveal-two" aria-labelledby="settingsTitle">
+            <div class="section-heading compact">
+              <div>
+                <span class="eyebrow">02 / 显示</span>
+                <h2 id="settingsTitle">按你的阅读习惯调整</h2>
+              </div>
+              <button class="text-button" id="resetButton" type="button">恢复默认</button>
+            </div>
+
+            <div class="preview-window" id="previewWindow" aria-label="台词效果预览">
+              <p id="previewText">这里会显示你的台词预览。</p>
+              <span>实时预览</span>
+            </div>
+
+            <div class="setting-list">
+              <label class="setting-row" for="fontSize">
+                <span>字号</span>
+                <output id="fontSizeValue" for="fontSize">52 px</output>
+                <input id="fontSize" type="range" min="20" max="100" step="1" value="52" />
+              </label>
+
+              <label class="setting-row" for="lineHeight">
+                <span>行距</span>
+                <output id="lineHeightValue" for="lineHeight">1.55</output>
+                <input id="lineHeight" type="range" min="1.15" max="2.2" step="0.05" value="1.55" />
+              </label>
+
+              <label class="setting-row" for="scrollSpeed">
+                <span>滚动速度</span>
+                <output id="speedValue" for="scrollSpeed">32 px/s</output>
+                <input id="scrollSpeed" type="range" min="5" max="120" step="1" value="32" />
+              </label>
+
+              <div class="color-row">
+                <label for="textColor">
+                  <span>文字颜色</span>
+                  <span class="color-control">
+                    <input id="textColor" type="color" value="#f7f3e8" />
+                    <output id="textColorValue" for="textColor">#F7F3E8</output>
+                  </span>
+                </label>
+                <label for="backgroundColor">
+                  <span>背景颜色</span>
+                  <span class="color-control">
+                    <input id="backgroundColor" type="color" value="#0d1110" />
+                    <output id="backgroundColorValue" for="backgroundColor">#0D1110</output>
+                  </span>
+                </label>
+              </div>
+
+              <fieldset class="choice-row">
+                <legend>对齐方式</legend>
+                <div class="segmented-control">
+                  <label><input type="radio" name="alignment" value="left" checked /><span>左对齐</span></label>
+                  <label><input type="radio" name="alignment" value="center" /><span>居中</span></label>
+                </div>
+              </fieldset>
+
+              <label class="switch-row" for="mirrorToggle">
+                <span>
+                  <strong>镜像显示</strong>
+                  <small>配合提词器反光镜使用</small>
+                </span>
+                <input id="mirrorToggle" type="checkbox" role="switch" />
+                <i aria-hidden="true"></i>
+              </label>
+            </div>
+          </section>
+
+          <button class="start-button reveal reveal-three" id="startButton" type="button">
+            <span>
+              <small>准备好后</small>
+              <strong>开始提词</strong>
+            </span>
+            <span class="start-icon" aria-hidden="true">→</span>
+          </button>
+          <p class="start-note reveal reveal-three">进入后倒计时 3 秒；手动拖动会自动暂停。</p>
+        </aside>
+      </main>
+
+      <footer class="site-footer">
+        <img class="footer-icon" src="icons/icon.svg" alt="" width="36" height="36" />
+        <div class="footer-identity">
+          <strong>台词流 · 简约免费提词器</strong>
+          <a href="mailto:zhangty1996@163.com">张天宇 / zhangty1996@163.com</a>
+        </div>
+        <div class="footer-privacy">台词仅保存在本机</div>
+      </footer>
+    </div>
+
+    <section class="player-view" id="playerView" aria-label="提词模式" hidden>
+      <div class="reader" id="reader" tabindex="0">
+        <div class="prompt-track" id="promptTrack">
+          <div class="prompt-spacer" aria-hidden="true"></div>
+          <div class="prompt-text" id="promptText"></div>
+          <div class="prompt-spacer" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="reading-guide" aria-hidden="true"><i></i><i></i></div>
+
+      <div class="countdown" id="countdown" aria-live="assertive" hidden>
+        <span>3</span>
+      </div>
+
+      <header class="player-bar player-top" id="playerTopBar">
+        <button class="player-button" id="exitButton" type="button">返回编辑</button>
+        <div class="player-status" id="playerStatus" role="status">准备中</div>
+        <button class="player-button" id="fullscreenButton" type="button">全屏</button>
+      </header>
+
+      <footer class="player-bar player-controls" id="playerControls">
+        <button class="control-button secondary" id="restartButton" type="button">
+          <span aria-hidden="true">↟</span>
+          <small>置顶</small>
+        </button>
+        <button class="control-button secondary" id="slowerButton" type="button">
+          <span aria-hidden="true">−</span>
+          <small>慢一点</small>
+        </button>
+        <button class="control-button primary" id="playPauseButton" type="button">
+          <span class="playback-icon is-pause" id="playPauseIcon" aria-hidden="true"></span>
+          <small id="playPauseLabel">暂停</small>
+        </button>
+        <button class="control-button secondary" id="fasterButton" type="button">
+          <span aria-hidden="true">＋</span>
+          <small>快一点</small>
+        </button>
+        <div class="speed-readout" aria-label="当前滚动速度">
+          <strong id="playerSpeed">32</strong>
+          <small>px/s</small>
+        </div>
+      </footer>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/app.js?v=32" defer></script>
+  </body>
+</html>

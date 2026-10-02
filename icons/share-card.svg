@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grain" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+      <path d="M0 0v28" stroke="#ffffff" stroke-opacity=".035" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" rx="44" fill="#17201d"/>
+  <rect width="1200" height="630" rx="44" fill="url(#grain)"/>
+  <g transform="translate(490 120)">
+    <rect width="220" height="220" rx="50" fill="#f8f4ea"/>
+    <path d="M53 68h114M53 108h93M53 148h67" fill="none" stroke="#17201d" stroke-linecap="round" stroke-width="18"/>
+    <circle cx="161" cy="148" r="18" fill="#df573c"/>
+  </g>
+  <text x="600" y="410" fill="#f8f4ea" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="64" font-weight="700" text-anchor="middle">台词流</text>
+  <text x="600" y="468" fill="#b8c0bc" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="28" letter-spacing="8" text-anchor="middle">简约 · 方便 · 免费</text>
+  <rect x="468" y="518" width="264" height="4" rx="2" fill="#df573c"/>
+</svg>
